@@ -35,15 +35,15 @@ app-restart: ## Restart App Service
 sync: ## Sync Application
 	@echo -n "Sync ${APP_SERVICE_NAME}... "
 	@git pull \
-		&& echo 'done!'
+		&& echo 'done!' \
 		&& make -s app-rebuild nginx-reload
 
 nginx-reload: ## Reload Nginx
 	@echo -n 'Checking Nginx conf... '
 	@sudo nginx -t
-		&& echo 'done!'
-		&& echo -n 'Reload Nginx conf... '
-		&& nginx -s reload
+		&& echo 'done!' \
+		&& echo -n 'Reload Nginx conf... ' \
+		&& sudo nginx -s reload \
 		&& echo 'done!'
 
 nginx-restart: ## Restart Nginx
