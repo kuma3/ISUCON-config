@@ -40,7 +40,7 @@ sync: ## Sync Application
 
 nginx-reload: ## Reload Nginx
 	@echo -n 'Checking Nginx conf... '
-	@sudo nginx -t
+	@sudo nginx -t \
 		&& echo 'done!' \
 		&& echo -n 'Reload Nginx conf... ' \
 		&& sudo nginx -s reload \
